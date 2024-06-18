@@ -8,6 +8,7 @@
 import { useState } from "react"
 
 type StartGameProps = {
+    player: {}
     setPlayer: React.Dispatch<React.SetStateAction<{
         player1: string;
         player2: string;
@@ -35,6 +36,7 @@ export default function StartGame({ setPlayer }: StartGameProps) {
         <>
             <input type="text" onChange={(e) => handleFirstInput(e.target.value)} />
             <input type="text" onChange={(e) => handleSecondInput(e.target.value)} />
+            {player && <div>{player1} v {player2}</div>}
             <button onClick={() => handleSubmit(input1, input2)}>Submit</button>
         </>
     )
